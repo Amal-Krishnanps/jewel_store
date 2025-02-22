@@ -1,0 +1,13 @@
+# Python/Django specific
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+media/
+
+# Virtual Environment
+venv/
+
+# IDE and OS Files
+.vscode/
+.DS_Store
