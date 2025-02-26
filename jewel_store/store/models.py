@@ -22,7 +22,7 @@ class Category(models.Model):
     
     class Meta:
         verbose_name_plural="Categories"
-        ordering=('-created_at')
+        ordering=('-created_at',)
         
     def __str__(self):
         return self.title
@@ -44,7 +44,7 @@ class Product(models.Model):
     
     class Meta:
         verbose_name_plural='Products'
-        ordering=('-created_at')
+        ordering=('-created_at',)
     
     def __str__(self):
         return self.title
@@ -82,7 +82,7 @@ class Order(models.Model):
     address=models.ForeignKey(Address,verbose_name="Shipping Address",on_delete=models.CASCADE)
     product=models.ForeignKey(Product,verbose_name="Product",on_delete=models.CASCADE)
     quantity=models.PositiveIntegerField(verbose_name="Quantity")
-    order_date=models.DateTimeField(auto_now_add=True,verbose_name="Orderded Date")
+    order_date=models.DateTimeField(auto_now_add=True,verbose_name="Ordered Date")
     delivered_date = models.DateTimeField(null=True, blank=True, verbose_name="Delivered Date")
     status=models.CharField(
         choices=STATUS_CHOICES,
